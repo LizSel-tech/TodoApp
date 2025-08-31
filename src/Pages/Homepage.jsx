@@ -18,7 +18,7 @@ const HomePage = () => {
           <div className="row g-4">
             {/* Recent Tasks */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-3 h-100">
+              <div className="card shadow-sm p-2 h-100" style={{ minHeight: "160px" }}>
                 <h5 className="mb-3">Recent Tasks</h5>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item">✔ Buy groceries</li>
@@ -31,26 +31,26 @@ const HomePage = () => {
 
             {/* Folders */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-3 h-100">
+              <div className="card shadow-sm p-2 h-100" style={{ minHeight: "160px" }}>
                 <h5 className="mb-3">Folders</h5>
-                <div className="row g-3">
+                <div className="row g-2">
                   <div className="col-6">
-                    <div className="card p-3 text-center shadow-sm">
+                    <div className="card p-2 text-center shadow-sm" style={{ minHeight: "60px" }}>
                       📂 Work
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="card p-3 text-center shadow-sm">
+                    <div className="card p-2 text-center shadow-sm" style={{ minHeight: "60px" }}>
                       📂 Personal
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="card p-3 text-center shadow-sm">
+                    <div className="card p-2 text-center shadow-sm" style={{ minHeight: "60px" }}>
                       📂 School
                     </div>
                   </div>
                   <div className="col-6">
-                    <div className="card p-3 text-center shadow-sm">
+                    <div className="card p-2 text-center shadow-sm" style={{ minHeight: "60px" }}>
                       📂 Projects
                     </div>
                   </div>
@@ -63,9 +63,9 @@ const HomePage = () => {
           <div className="row g-4 mt-3">
             {/* Statistics */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-3 h-100">
+              <div className="card shadow-sm p-2 h-80" style={{ minHeight: "140px" }}>
                 <h5 className="mb-3">Statistics</h5>
-                <div className="text-center text-muted" style={{ height: "200px" }}>
+                <div className="text-center text-muted" style={{ height: "100px" }}>
                   📊 Chart will go here
                 </div>
               </div>
@@ -73,9 +73,9 @@ const HomePage = () => {
 
             {/* Calendar */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-3 h-100">
+              <div className="card shadow-sm p-2 h-100" style={{ minHeight: "140px" }}>
                 <h5 className="mb-3">Calendar</h5>
-                <div className="text-center text-muted" style={{ height: "200px" }}>
+                <div className="text-center text-muted" style={{ height: "100px" }}>
                   📅 Calendar widget will go here
                 </div>
               </div>

@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import React from "react";
+import myImage from "./images/girl.jpg";
 
 export default function Header() {
     const HeaderStyle = {
@@ -8,71 +9,78 @@ export default function Header() {
         boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "left",
+        alignItems: "center",
         color: "#333333",
     };
 
+    const SearchBoxStyle = {
+        display: "inline-block",
+        position: "relative",
+        marginRight: "20px",
+    };
+
     const SearchStyle = {
-        padding: "5px 10px",
+        padding: "8px 36px 8px 12px", // space for icon
         borderRadius: "20px",
         border: "1px solid #ccc",
-        width: "200px"
+        width: "400px",
+        outline: "none",
+        fontSize: "16px",
+        background: "#fff",
     };
-    const SearchBoxStyle = {
-        display: "incline-block",
-        position: "relative",
-        gap: "10px"
-    };
+
     const SearchIconStyle = {
         position: "absolute",
-        right: "10px",
-        alignItems: "center",
+        right: "14px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        color: "#888",
+        fontSize: "18px",
+        pointerEvents: "none",
     };
+
     const ButtonStyle = {
-        backgroundColor: "#6B5B95",
+        backgroundColor: "#AFEEEE",
         border: "none",
-        color: "#F7CAC9",
+        color: "#333333",
+        fontSize: "20px",
+        cursor: "pointer",
     };
-    
+
     const UserStyle = {
-        MarginLeft: "40px",
+        marginLeft: "20px",
         display: "flex",
         alignItems: "center",
         borderRadius: "50%",
         overflow: "hidden",
         width: "40px",
         height: "40px",
-        gap: "10px",
-        objectFit: "cover"
+        objectFit: "cover",
     };
-  return (
-    <header style={HeaderStyle}>
-      <h2 className="text-2xl font-semibold">Todo </h2>
-        {/* You can add more elements like a logo or navigation links here */}
-       <div style={SearchBoxStyle}>
-        <input
-          
-          type="text"
-          placeholder="Search..."
-          style={SearchStyle}
-        />
-       <span style={SearchIconStyle}>
-            <i className="bi bi-search"></i>
-       </span>
-       </div>
-       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-         {/* Notification button */}
-       <button style={ButtonStyle}>
-        <i className="bi bi-bell-fill"></i>
-       </button>
-      
-        {/* You can add user profile or other actions here */}
-       <div style={UserStyle}>
-        <img 
-            src="https://via.placeholder.com/40"
-            alt="User"></img>
-        </div>
-         </div> 
-    </header>
-  );
+
+    return (
+        <header style={HeaderStyle}>
+            <h2 className="text-2xl font-semibold">Todo</h2>
+            <div style={SearchBoxStyle}>
+                <input
+                    type="text"
+                    placeholder=" 🔍 Search..."
+                    style={SearchStyle}
+                />
+                
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <button style={ButtonStyle}>
+                    <i className="bi bi-bell-fill"></i>
+                </button>
+                <div style={UserStyle}>
+                    <img
+                        src={myImage}
+                        alt="User"
+                        style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                    />
+                </div>
+            </div>
+        </header>
+    );
 }

@@ -16,7 +16,7 @@ export default function Sidebar() {
   const ButtonStyle = {
     backgroundColor: "transparent",
     border: "none",
-    color: "#333",
+    color: "#FFFFFF",
     cursor: "pointer",
     alignItems: "center",
     display: "flex",
@@ -30,32 +30,34 @@ export default function Sidebar() {
     alignItems: "center",
     gap: "10px",
     textDecoration: "none",
-    color: "#333",
+    color: "#FFFFFF",
     padding: "8px 12px",
     borderRadius: "4px",
     marginBottom: "30px",
   };
 
   const hoverStyle = {
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#176f7cff",
   };
 
   const toggleCollapse = () => setCollapsed(!collapsed);
   const toggleTasks = () => setTasksOpen(!tasksOpen);
 
   const linkClass =
-    "d-flex align-items-center gap-2 text-dark text-decoration-none px-3 py-2 rounded";
+    "d-flex align-items-center gap-2 text-white text-decoration-none px-3 py-2 rounded";
   const linkHover = { transition: "background 0.2s" };
 
   return (
     <nav
-      className="d-flex flex-column  shadow-sm p-3"
+      className="d-flex flex-column shadow-sm p-3"
       style={{
         height: "100vh",
         width: collapsed ? "80px" : "240px",
         borderRight: "1px solid #ddd",
         transition: "width 0.3s ease",
         backgroundColor: "#30B2C7",
+        display: "flex", // ensure flex column
+        flexDirection: "column",
       }}
     >
       {/* Navigation Arrow */}
@@ -69,7 +71,7 @@ export default function Sidebar() {
       <a
         href="/"
         style={linkStyle}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
       >
         <i className="bi bi-house-door"></i>
@@ -77,43 +79,22 @@ export default function Sidebar() {
       </a>
 
        {/* All Tasks with Submenu */}
-      <div>
-        <button
-          className={linkClass}
-          style={{ ...linkHover, width: "100%", border: "none", background: "none" }}
-          onClick={toggleTasks}
-        >
-          <i className="bi bi-list-check"></i>
-          {!collapsed && (
-            <>
-              <span>All Tasks</span>
-              <i
-                className={`bi bi-chevron-${tasksOpen ? "up" : "down"} ms-auto`}
-              ></i>
-            </>
-          )}
-        </button>
+      
+      <a 
+        href="/alltasks"
+        style={linkStyle }
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
+        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
+      >
+        <i className="bi bi-list-check"></i>
+        {!collapsed && "Tasks"}
+      </a>
 
-        {/* Submenu */}
-        {tasksOpen && !collapsed && (
-          <div className="ms-4 mt-1 d-flex flex-column">
-            <a href="/alltasks" className={linkClass} style={linkHover}>
-              <i className="bi bi-calendar-day"></i> Today
-            </a>
-            <a href="/alltasks" className={linkClass} style={linkHover}>
-              <i className="bi bi-calendar-event"></i> Upcoming
-            </a>
-            <a href="/alltasks" className={linkClass} style={linkHover}>
-              <i className="bi bi-check2-circle"></i> Completed
-            </a>
-          </div>
-        )}
-      </div>
 
       <a 
         href="/priorities"
         style={linkStyle }
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
       >
         <i className="bi bi-flag-fill"></i>
@@ -123,7 +104,7 @@ export default function Sidebar() {
       <a 
         href="/projects"
         style={linkStyle }
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
       >
         <i className="bi bi-folder2"></i>
@@ -133,7 +114,7 @@ export default function Sidebar() {
       <a
         href="/notes"
         style={linkStyle}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
       >
         <i className="bi bi-journal-text"></i>
@@ -142,8 +123,8 @@ export default function Sidebar() {
 
       <a
         href="/settings"
-        style={linkStyle}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#f8f9fa")}
+        style={{ ...linkStyle, marginTop: "auto" }} // push to bottom
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#108294ff")}
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
       >
         <i className="bi bi-gear"></i>
